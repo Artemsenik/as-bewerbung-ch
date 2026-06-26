@@ -6,10 +6,11 @@
 <circle cx="52" cy="56" r="2.6" fill="#143F3C"/>
 <g fill="none" stroke="#143F3C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
 
-<line x1="150" y1="162" x2="404" y2="162" stroke="#BDB7A9" stroke-width="2.2"/>
-<circle cx="170" cy="162" r="5" fill="#143F3C" stroke="none"/>
-<circle cx="226" cy="162" r="5" fill="#143F3C" stroke="none"/>
-<path d="M232 162 Q300 112 360 162" stroke-dasharray="4 7"/>
-<circle cx="360" cy="162" r="5" fill="#143F3C" stroke="none"/>
-<circle cx="404" cy="162" r="5" fill="#143F3C" stroke="none"/>
+<line x1="160" y1="172" x2="358" y2="172"/>
+<circle cx="160" cy="172" r="6.5" fill="#143F3C" stroke="none"/>
+<circle cx="214" cy="172" r="4" fill="none"/>
+<circle cx="262" cy="172" r="4" fill="none"/>
+<circle cx="310" cy="172" r="4" fill="none"/>
+<path d="M358 172 L404 120"/>
+<circle cx="404" cy="120" r="6" fill="#143F3C" stroke="none"/>
 </g></svg>

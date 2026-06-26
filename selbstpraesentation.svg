@@ -6,9 +6,9 @@
 <circle cx="52" cy="56" r="2.6" fill="#143F3C"/>
 <g fill="none" stroke="#143F3C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
 
-<circle cx="252" cy="138" r="54"/>
-<line x1="252" y1="106" x2="252" y2="170"/>
-<line x1="234" y1="122" x2="270" y2="122" stroke-width="2.2"/>
-<line x1="234" y1="138" x2="270" y2="138" stroke-width="2.2"/>
-<circle cx="346" cy="186" r="4.5" fill="#143F3C" stroke="none"/>
+<line x1="150" y1="150" x2="232" y2="150"/>
+<line x1="252" y1="130" x2="252" y2="170" stroke-width="5"/>
+<line x1="270" y1="130" x2="270" y2="170" stroke-width="5"/>
+<line x1="290" y1="150" x2="404" y2="150"/>
+<circle cx="404" cy="150" r="4.5" fill="#143F3C" stroke="none"/>
 </g></svg>
