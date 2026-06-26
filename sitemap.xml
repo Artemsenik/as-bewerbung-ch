@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.as-bewerbung.ch/</loc><priority>1.0</priority></url>
-  <url><loc>https://www.as-bewerbung.ch/vorstellungsgespraech-40-plus</loc><priority>0.9</priority></url>
-  <url><loc>https://www.as-bewerbung.ch/interview-sicherheit-40-plus</loc><priority>0.9</priority></url>
-  <url><loc>https://www.as-bewerbung.ch/bewerbungsprozess-40-plus</loc><priority>0.9</priority></url>
-  <url><loc>https://www.as-bewerbung.ch/interview-check</loc><priority>0.9</priority></url>
-  <url><loc>https://www.as-bewerbung.ch/ueber-artem-senik</loc><priority>0.7</priority></url>
-  <url><loc>https://www.as-bewerbung.ch/faq</loc><priority>0.7</priority></url>
-  <url><loc>https://www.as-bewerbung.ch/ratgeber</loc><priority>0.7</priority></url>
+  <url><loc>https://www.as-bewerbung.ch/</loc><lastmod>2026-06-26</lastmod><priority>1.0</priority></url>
+  <url><loc>https://www.as-bewerbung.ch/vorstellungsgespraech.html</loc><lastmod>2026-06-26</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.as-bewerbung.ch/interview-sicherheit.html</loc><lastmod>2026-06-26</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.as-bewerbung.ch/bewerbungsprozess.html</loc><lastmod>2026-06-26</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.as-bewerbung.ch/interview-check.html</loc><lastmod>2026-06-26</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.as-bewerbung.ch/ueber-artem.html</loc><lastmod>2026-06-26</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.as-bewerbung.ch/faq.html</loc><lastmod>2026-06-26</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.as-bewerbung.ch/ratgeber.html</loc><lastmod>2026-06-26</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.as-bewerbung.ch/impressum.html</loc><lastmod>2026-06-26</lastmod><priority>0.3</priority></url>
+  <url><loc>https://www.as-bewerbung.ch/datenschutz.html</loc><lastmod>2026-06-26</lastmod><priority>0.3</priority></url>
 </urlset>
