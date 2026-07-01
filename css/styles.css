@@ -787,51 +787,77 @@ strong { color: var(--ink); font-weight: 600; }
 /* Ratgeber-Karten als Links */
 a.blog-card { text-decoration: none; color: inherit; }
 
+
 /* ============================================================
-   VIDEO-BAND – ruhiger, beschrifteter Aufmerksamkeitsfänger
+   HERO-VIDEO – langsamer, ruhiger Aufmerksamkeitsfänger (oberste Sektion)
    ============================================================ */
-.video-band {
+.hero-video {
   position: relative;
   overflow: hidden;
-  min-height: 440px;
+  min-height: 78vh;
   display: flex;
   align-items: center;
   background: var(--accent-deep);
 }
-.video-band-media,
-.video-band-fallback {
+.hero-video-media,
+.hero-video-fallback {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
   z-index: 0;
 }
-.video-band-fallback { display: none; }
-.video-band-overlay {
+.hero-video-fallback { display: none; }
+.hero-video-overlay {
   position: absolute; inset: 0; z-index: 1;
   background:
-    linear-gradient(100deg, rgba(14,46,44,0.92) 0%, rgba(14,46,44,0.72) 42%, rgba(14,46,44,0.30) 100%),
-    linear-gradient(to top, rgba(14,46,44,0.55), rgba(14,46,44,0) 55%);
+    linear-gradient(100deg, rgba(14,46,44,0.90) 0%, rgba(14,46,44,0.66) 46%, rgba(14,46,44,0.28) 100%),
+    linear-gradient(to top, rgba(14,46,44,0.45), rgba(14,46,44,0) 60%);
 }
-.video-band-content { position: relative; z-index: 2; max-width: 640px; padding-block: 3rem; }
-.video-band-eyebrow {
-  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
-  color: rgba(255,255,255,0.65); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem;
+.hero-video-content { position: relative; z-index: 2; max-width: 660px; padding-block: 4rem; }
+.hero-video-content h1 {
+  color: #fff;
+  margin-top: 1rem;
 }
-.video-band-eyebrow::before { content: ''; width: 32px; height: 1.5px; background: rgba(255,255,255,0.4); }
-.video-band-title {
-  font-family: var(--font-display); font-size: clamp(1.6rem, 3.6vw, 2.5rem);
-  line-height: 1.2; color: #fff; letter-spacing: -0.01em; margin-bottom: 1rem;
+.hero-video-content p {
+  color: rgba(255,255,255,0.85);
+  font-size: 1.08rem;
+  line-height: 1.65;
+  margin-top: 1.1rem;
+  max-width: 54ch;
 }
-.video-band-caption {
-  font-size: 1rem; line-height: 1.6; color: rgba(255,255,255,0.82); max-width: 52ch;
+.hero-video-content .hero-actions { margin-top: 2rem; }
+
+.tag--on-dark {
+  color: #fff;
+  background: rgba(255,255,255,0.14);
+  border-color: rgba(255,255,255,0.3);
 }
+
+.btn-outline-light {
+  border: 1px solid rgba(255,255,255,0.55);
+  color: #fff;
+  background: transparent;
+}
+.btn-outline-light:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
+
 @media (max-width: 768px) {
-  .video-band { min-height: 380px; }
-  .video-band-overlay {
-    background: linear-gradient(to top, rgba(14,46,44,0.95) 0%, rgba(14,46,44,0.78) 55%, rgba(14,46,44,0.62) 100%);
+  .hero-video { min-height: 86vh; }
+  .hero-video-overlay {
+    background: linear-gradient(to top, rgba(14,46,44,0.96) 0%, rgba(14,46,44,0.80) 50%, rgba(14,46,44,0.55) 100%);
   }
+  .hero-video-content { padding-block: 3rem; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .video-band-media { display: none; }
-  .video-band-fallback { display: block; }
+  .hero-video-media { display: none; }
+  .hero-video-fallback { display: block; }
+}
+
+/* Begleit-Artwork in Textspalten */
+.approach-artwork {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  margin-top: 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
 }

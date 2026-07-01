@@ -74,6 +74,14 @@ document.addEventListener('DOMContentLoaded', function () {
           headers: { 'Accept': 'application/json' }
         });
         if (res.ok) {
+          // Conversion 1: Lead-Formular senden – nur bei echtem Erfolg
+          if (typeof gtag === 'function') {
+            gtag('event', 'conversion', {
+              'send_to':  'AW-16692093930/-dQLCI-HjckcEOrHtJc-',
+              'value':    50.00,
+              'currency': 'CHF'
+            });
+          }
           form.style.display = 'none';
           if (success) success.style.display = 'block';
         } else {
@@ -156,6 +164,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.querySelectorAll('.reveal, .reveal-group').forEach(el => io.observe(el));
   }
+
+  // --- Conversion 2: Click-to-Call – alle tel:-Links, Link wird nicht blockiert ---
+  document.addEventListener('click', function (e) {
+    const link = e.target.closest('a[href^="tel:"]');
+    if (!link) return;
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', {
+        'send_to':  'AW-16692093930/Q5Z9CI3WjckcEOrHtJc-',
+        'value':    1.00,
+        'currency': 'CHF',
+        'event_callback': function () {}   // kein Redirect-Block nötig bei tel:
+      });
+    }
+    // Link öffnet ganz normal weiter (kein e.preventDefault())
+  });
 
   // ============================================================
   //  HERO-BLICKFÄNGER – Frage → geordnete Antwort (Zyklus)
