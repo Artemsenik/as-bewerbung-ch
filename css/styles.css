@@ -40,8 +40,9 @@
   --font-body:   'Inter', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
   --font-display:'Newsreader', Georgia, 'Times New Roman', serif;
 
-  --shadow-sm:   0 1px 2px rgba(20,20,16,0.04);
-  --shadow-md:   0 8px 30px rgba(20,40,38,0.08);
+  --shadow-sm:   0 1px 2px rgba(20,40,38,0.05), 0 1px 1px rgba(20,40,38,0.03);
+  --shadow-md:   0 2px 4px rgba(20,40,38,0.04), 0 8px 18px rgba(20,40,38,0.06), 0 18px 40px rgba(20,40,38,0.07);
+  --shadow-lift: 0 4px 8px rgba(20,40,38,0.05), 0 14px 30px rgba(20,40,38,0.09), 0 30px 60px rgba(20,40,38,0.10);
   --ease:        cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -860,4 +861,104 @@ a.blog-card { text-decoration: none; color: inherit; }
   margin-top: 2rem;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
+}
+
+/* ============================================================
+   DESIGN-EXCELLENCE-PASS – Wahrnehmungsqualität, keine Strukturänderung
+   ============================================================ */
+
+/* --- 1. Typografische Feinheiten --- */
+h1, h2, h3 { text-wrap: balance; }
+p { text-wrap: pretty; }
+h1 { letter-spacing: -0.018em; }
+
+/* --- 2. Marken-Textauswahl --- */
+::selection { background: var(--accent); color: #fff; }
+::-moz-selection { background: var(--accent); color: #fff; }
+
+/* --- 3. Veredelte Fokus-Ringe (Tastatur-Nutzer, Zugänglichkeit) --- */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.btn:focus-visible { outline-offset: 2px; }
+
+/* --- 4. Feine Papier-Textur (nur Desktop, hauchzart) --- */
+@media (min-width: 769px) and (prefers-reduced-motion: no-preference) {
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 9999;
+    pointer-events: none;
+    opacity: 0.028;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+/* --- 5. Karten: Tiefe & feine Lichtkante --- */
+.decision-card, .price-card, .blog-card {
+  box-shadow: var(--shadow-sm);
+  border-color: color-mix(in srgb, var(--border) 88%, var(--accent) 12%);
+}
+.decision-card:hover, .blog-card:hover { box-shadow: var(--shadow-lift); }
+.price-card--featured {
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+.price-card--featured::before {
+  content: '';
+  position: absolute; inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(155deg, var(--accent) 0%, transparent 45%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* --- 6. Hero-Signature: edler Rahmen --- */
+.hero-signature {
+  box-shadow: var(--shadow-md);
+  border-top: 2px solid var(--accent);
+}
+
+/* --- 7. Navigation: Schatten erst beim Scrollen (JS setzt .nav-scrolled) --- */
+.site-nav { transition: box-shadow 0.3s var(--ease); }
+.site-nav.nav-scrolled { box-shadow: 0 4px 24px rgba(20,40,38,0.07); }
+
+/* --- 8. Button-Pfeil: Mikrobewegung beim Hover --- */
+.btn-primary::after, .btn-white::after {
+  display: inline-block;
+  transition: transform 0.22s var(--ease);
+}
+.btn-primary:hover::after, .btn-white:hover::after { transform: translateX(3px); }
+
+/* --- 9. Links im Fliesstext: eleganter Unterstrich --- */
+.article-body a, .faq-answer a {
+  text-decoration: underline;
+  text-decoration-color: var(--accent-line);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s;
+}
+.article-body a:hover, .faq-answer a:hover { text-decoration-color: var(--accent); }
+
+/* --- 10. Dezente Markenscrollbar (WebKit) --- */
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: var(--paper); }
+::-webkit-scrollbar-thumb {
+  background: var(--accent-line);
+  border-radius: 6px;
+  border: 3px solid var(--paper);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--accent-mid); }
+
+/* --- 11. Bilder: konsistente Veredelung --- */
+.about-photo img { box-shadow: var(--shadow-md); }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary::after, .btn-white::after { transition: none; }
+  .site-nav { transition: none; }
 }

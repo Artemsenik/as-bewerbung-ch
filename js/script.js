@@ -144,6 +144,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const y = window.scrollY || h.scrollTop;
     bar.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
     if (scrollCue) scrollCue.classList.toggle('gone', y > 40);
+    const nav = document.querySelector('.site-nav');
+    if (nav) nav.classList.toggle('nav-scrolled', y > 8);
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
